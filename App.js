@@ -1,4 +1,6 @@
+import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { GameProvider } from './src/context/GameContext';
@@ -20,6 +22,7 @@ export default function App() {
   }, []);
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
     <GameProvider>
       <NavigationContainer>
         <Stack.Navigator
@@ -40,5 +43,6 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </GameProvider>
+    </GestureHandlerRootView>
   );
 }
